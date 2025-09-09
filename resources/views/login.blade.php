@@ -75,7 +75,7 @@
                                                 <label class="form-check-label" for="remember">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
+                                                {{-- <a class="small" href="{{ route('password.request') }}">Forgot Password?</a> --}}
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="fas fa-sign-in-alt me-2"></i>Login
                                                 </button>

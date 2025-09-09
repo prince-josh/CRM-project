@@ -38,4 +38,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('index');
     })->name('dashboard');
+    
+    // Contact routes
+    Route::resource('contacts', \App\Http\Controllers\ContactController::class);
+
+        // User Invitation routes
+        Route::resource('user-invitations', \App\Http\Controllers\UserInvitationController::class);
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\UserInvitation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserInvitationController extends Controller
 {
@@ -12,7 +13,14 @@ class UserInvitationController extends Controller
      */
     public function index()
     {
-        //
+        // $users = Auth::user()->organization()->users();
+
+
+        //Get of users
+        $userInvitations = Auth::user()->organization->userInvitations()->get();
+        return view("invites.index", [
+            'userInvitations'=> $userInvitations
+        ]);
     }
 
     /**
@@ -20,7 +28,7 @@ class UserInvitationController extends Controller
      */
     public function create()
     {
-        //
+        return view('invites.create');
     }
 
     /**
